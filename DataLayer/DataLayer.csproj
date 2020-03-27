@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C67D0FAA-0C06-4A32-B41A-BAB7F378B1B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataLayer</RootNamespace>
+    <AssemblyName>DataLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database.cs" />
+    <Compile Include="Mappers\Classes\MenuHasItemsMapper.cs" />
+    <Compile Include="Mappers\Classes\RoomTypeMapper.cs" />
+    <Compile Include="Mappers\Classes\CleaningStatusMapper.cs" />
+    <Compile Include="Mappers\Classes\BarSaleItemMapper.cs" />
+    <Compile Include="Mappers\Classes\BarSaleMapper.cs" />
+    <Compile Include="Mappers\IMapper.cs" />
+    <Compile Include="Mappers\Classes\CleaningRosterItemMapper.cs" />
+    <Compile Include="Mappers\Classes\CleaningRosterMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IMenuHasItemsMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IRoomTypeMapper.cs" />
+    <Compile Include="Mappers\Interfaces\ICleaningStatusMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IBarSaleItemMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IBarSaleMapper.cs" />
+    <Compile Include="Mappers\Classes\EmployeeTypeMapper.cs" />
+    <Compile Include="Mappers\Classes\IngredientsMapper.cs" />
+    <Compile Include="Mappers\Interfaces\ICleaningRosterItemMapper.cs" />
+    <Compile Include="Mappers\Interfaces\ICleaningRosterMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IEmployeeTypeMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IIngredientsMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IMenuItemMapper.cs" />
+    <Compile Include="Mappers\Interfaces\ICustomerBillMapper.cs" />
+    <Compile Include="Mappers\Interfaces\ICustomerBillItemMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IMenuMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IMenuTypeMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IMovingStockItemMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IMovingStockMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IServingQueueItemMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IStockLocationMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IStockMapper.cs" />
+    <Compile Include="Mappers\Classes\MenuItemMapper.cs" />
+    <Compile Include="Mappers\Classes\CustomerBillMapper.cs" />
+    <Compile Include="Mappers\Classes\CustomerBillItemMapper.cs" />
+    <Compile Include="Mappers\Classes\MenuMapper.cs" />
+    <Compile Include="Mappers\Classes\MenuTypeMapper.cs" />
+    <Compile Include="Mappers\Classes\MovingStockMapper.cs" />
+    <Compile Include="Mappers\Classes\MovingStockItemMapper.cs" />
+    <Compile Include="Mappers\Classes\EmployeeMapper.cs" />
+    <Compile Include="IDatabase.cs" />
+    <Compile Include="Mappers\Interfaces\IEmployeeMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IReservationMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IRoomMapper.cs" />
+    <Compile Include="Mappers\Classes\ServingQueueItemMapper.cs" />
+    <Compile Include="Mappers\Classes\StockLocationMapper.cs" />
+    <Compile Include="Mappers\Classes\StockMapper.cs" />
+    <Compile Include="MapperUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mappers\Classes\ReservationMapper.cs" />
+    <Compile Include="Mappers\Classes\RoomMapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
+      <Project>{6421E143-73E1-456C-8FAD-CBDC86F5C9F0}</Project>
+      <Name>BusinessEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
